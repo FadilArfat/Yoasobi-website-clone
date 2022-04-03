@@ -1,0 +1,390 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.menu {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  width: 80px;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+
+.nav-item {
+  margin-top: 10px;
+  margin-bottom: 10px !important;
+}
+
+.offcanvas {
+  z-index: -1;
+}
+
+.onreveal::before {
+  display: flex;
+  justify-content: baseline;
+  margin-left: 10px;
+  left: 0px;
+  top: 38px;
+  content: "";
+  background: black;
+  position: absolute;
+  width: 150px;
+  height: 30px;
+  animation-name: reveal;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-delay: 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  right: 0;
+  animation-direction: reverse;
+}
+
+@keyframes reveal {
+  0% {
+    width: 0px;
+  }
+  /* First second. */
+
+  50% {
+    width: 65px;
+  }
+
+  100% {
+    width: 150px;
+  }
+}
+
+.menu_burger {
+  display: flex;
+  width: 40px;
+  height: 4px;
+  background: white;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(255, 101, 47, 0.2);
+  transition: all 0.5s ease-in-out;
+}
+.menu_burger::before,
+.menu_burger::after {
+  content: "";
+  position: absolute;
+  margin-right: 1000px;
+  width: 40px;
+  height: 4px;
+  background: white;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(255, 101, 47, 0.2);
+  transition: all 0.5s ease-in-out;
+}
+
+.menu_burger::before {
+  transform: translateY(-16px);
+}
+.menu_burger::after {
+  transform: translateY(16px);
+}
+
+/* ANIMATION */
+.menu.open .menu_burger {
+  transform: translateX(-50px);
+  background: transparent;
+  box-shadow: none;
+}
+.menu.open .menu_burger::before {
+  transform: rotate(45deg) translate(35px, -35px);
+}
+.menu.open .menu_burger::after {
+  transform: rotate(-45deg) translate(35px, 35px);
+}
+
+body,
+html {
+  font-family: "Bebas Neue", cursive;
+  background-color: black !important;
+  z-index: 100;
+  position: relative;
+
+  overflow-x: hidden;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: grey #ddd;
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: grey;
+  border-radius: 20px;
+  border: 3px solid #ddd;
+}
+
+.jumbotron {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.h1-jum {
+  position: static;
+  font-size: 270px !important;
+  width: 100%;
+  color: rgb(255, 72, 102);
+  text-transform: uppercase;
+  text-align: center;
+  text-shadow: 0 0 10px rgba(255, 72, 102, 0.35);
+}
+
+.berita {
+  margin-left: 20px;
+  margin-bottom: 40px;
+}
+
+.konten {
+  margin-top: 50px;
+  margin-bottom: 200px;
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.baba {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+#bg {
+  position: fixed;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+}
+
+.padding-0 {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.marl {
+  margin-left: 100px;
+}
+
+.btn-anim {
+  color: whitesmoke;
+  border: 1px solid whitesmoke;
+  border-radius: 0;
+  transform: translate(-50%, -50%);
+  background-color: transparent;
+  padding: 10px 80px;
+  position: absolute;
+  transition: all 0.2s ease-in-out !important;
+}
+
+.scd {
+  margin-top: 50px;
+  font-size: medium;
+  color: rgba(245, 245, 245, 0.5) !important;
+}
+
+.loader-line {
+  width: 5px;
+  height: 80px;
+  overflow: hidden;
+  background-color: #ddd;
+  margin-top: 100px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+}
+
+.loader-line:before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  height: 40%;
+  width: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: grey;
+  -webkit-animation: lineAnim 1s linear infinite;
+  -moz-animation: lineAnim 1s linear infinite;
+  animation: lineAnim 1s linear infinite;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+}
+
+@keyframes lineAnim {
+  0% {
+    top: -40%;
+  }
+  50% {
+    top: 20%;
+    height: 80%;
+  }
+  100% {
+    top: 100%;
+    height: 100%;
+  }
+}
+
+@keyframes tombol {
+  0% {
+    color: rgba(255, 255, 255, 0.801);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.801);
+  }
+  75% {
+    color: rgba(255, 87, 115, 0.801);
+    box-shadow: 0 0 15px rgba(255, 72, 102, 0.35);
+    border: 1px solid rgba(255, 87, 115, 0.801);
+  }
+}
+.btn-anim:hover {
+  animation: tombol 2s infinite alternate;
+}
+
+.navbar-text {
+  text-transform: uppercase;
+  color: rgb(255, 72, 102);
+  font-size: 32px !important;
+  font-weight: bolder;
+}
+
+.container-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.kenapa {
+  background-color: transparent;
+  position: absolute;
+  justify-content: center;
+  margin-top: 100px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  margin: 0;
+  padding: 0;
+}
+
+.grid-item {
+  background-color: transparent;
+  color: white;
+  border: 0;
+}
+
+.grid-itema {
+  color: white;
+  border: 0;
+}
+
+.after {
+  background-image: url("img/background.png");
+  color: blue;
+}
+
+.flexing {
+  display: flex;
+  text-align: center;
+}
+
+.button-more {
+  padding: 5px;
+  color: whitesmoke;
+  background-color: transparent;
+  border: 1px solid white;
+}
+
+.blok {
+  width: 300px;
+  height: 300px;
+  background-color: rgba(128, 128, 128, 0.527);
+  text-align: center;
+}
+
+.live {
+  width: 300px;
+  height: 158px;
+  background-color: white;
+  text-align: center;
+}
+
+img.animated-gif {
+  width: 800px;
+  height: auto;
+  opacity: 0.8;
+  position: relative;
+}
+
+.scale {
+  transform: scale(1.5);
+}
+
+.blok3 {
+  vertical-align: bottom;
+  padding-left: 0px;
+  padding-right: 0px;
+  margin-left: 0px;
+}
+
+.zoom {
+  margin: auto;
+  transition: transform 0.2s;
+  margin: 0 auto;
+}
+
+.zoom:hover {
+  transform: scale(1.1);
+}
+
+.panah {
+  position: absolute;
+  bottom: 800px;
+  font-size: 30px;
+  color: orange;
+}
+
+.navbar-toogler {
+  border: none !important;
+  border-color: black !important;
+  padding: 0px !important;
+  margin: 0px !important;
+  border-radius: 0px !important;
+  box-shadow: none !important;
+}
+
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler-icon:focus {
+  outline: none !important;
+  box-shadow: none !important;
+  border: 0 !important;
+}
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  h1 {
+    writing-mode: tb-rl;
+  }
+}
